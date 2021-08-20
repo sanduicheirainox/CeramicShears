@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Forge Recommended Versioning](https://mcforge.readthedocs.io/en/latest/conventions/versioning/).
 
-## [1.16.5-1.1.0.0] - 2021-08-20
+## [1.16.5-1.5.0.0] - 2021-08-20
 ### Added
 - Russian and Ukrainian translation (thanks to vstannumdum aka DMHYT) #10
 
