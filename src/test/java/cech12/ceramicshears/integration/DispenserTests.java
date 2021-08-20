@@ -1,5 +1,5 @@
 package cech12.ceramicshears.integration;
-
+/*
 import cech12.ceramicshears.IntegrationTestUtils;
 import com.alcatrazescapee.mcjunitlib.framework.IntegrationTest;
 import com.alcatrazescapee.mcjunitlib.framework.IntegrationTestClass;
@@ -51,3 +51,4 @@ public class DispenserTests {
     }
 
 }
+*/

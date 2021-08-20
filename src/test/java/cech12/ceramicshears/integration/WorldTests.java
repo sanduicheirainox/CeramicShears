@@ -1,5 +1,5 @@
 package cech12.ceramicshears.integration;
-
+/*
 import cech12.ceramicshears.IntegrationTestUtils;
 import cech12.ceramicshears.api.item.CeramicShearsItems;
 import com.alcatrazescapee.mcjunitlib.framework.IntegrationTest;
@@ -137,3 +137,4 @@ public class WorldTests {
     }
 
 }
+*/

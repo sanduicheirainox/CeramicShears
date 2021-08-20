@@ -1,6 +1,6 @@
 package cech12.ceramicshears.api.item;
 
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 
 public class CeramicShearsItems {
 

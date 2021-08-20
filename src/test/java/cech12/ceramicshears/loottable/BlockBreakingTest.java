@@ -1,5 +1,5 @@
 package cech12.ceramicshears.loottable;
-
+/*
 import cech12.ceramicshears.api.item.CeramicShearsItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -83,3 +83,4 @@ public class BlockBreakingTest {
     }
 
 }
+*/
