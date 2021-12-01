@@ -8,6 +8,6 @@
 
 This is a **Minecraft Forge** mod which adds **Ceramic Shears** to the game.
 
-![Crafting](https://raw.githubusercontent.com/cech12/CeramicShears/1.17/material/crafting.png)
+![Crafting](material/crafting.png)
            
 For more information check out the **Wiki**: https://github.com/cech12/CeramicShears/wiki
