@@ -30,6 +30,7 @@ jobs:
       java-version: 17
       mod-name: Ceramic Shears
       mod-id: ceramicshears
+    secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   publish-curseforge:
     needs: codeql
@@ -38,4 +39,5 @@ jobs:
     uses: cech12/MinecraftModActions/.github/workflows/publish-curseforge.yml@main
     with:
       java-version: 17
+    secrets:
       curseforge-token: ${{ secrets.CURSEFORGE_API_KEY }}
