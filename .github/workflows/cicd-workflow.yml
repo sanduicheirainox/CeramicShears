@@ -1,0 +1,25 @@
+# This workflow builds the project on each push and pull request and publish it on new tags
+
+name: CI/CD
+
+on:
+  push:
+    branches: [ "1.18" ]
+    tags: ["1.18*"]
+  pull_request:
+    branches: [ "1.18" ]
+
+jobs:
+  build:
+    name: Build
+    uses: cech12/CeramicShears/.github/workflows/build.yml@1.18
+  codeql:
+    needs: build
+    name: CodeQL
+    uses: cech12/CeramicShears/.github/workflows/codeql-analysis.yml@1.18
+  publish:
+    needs: codeql
+    if: startsWith(github.ref, 'refs/tags/1.18')
+    name: Publishv
+    uses: cech12/CeramicShears/.github/workflows/publish.yml@1.18
+
