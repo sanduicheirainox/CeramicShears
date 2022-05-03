@@ -8,7 +8,7 @@ import net.minecraft.world.item.ShearsItem;
 public class CeramicShearsItem extends ShearsItem {
 
     public CeramicShearsItem() {
-        super((new Properties()).tab(CreativeModeTab.TAB_TOOLS));
+        super((new Properties()).stacksTo(1).tab(CreativeModeTab.TAB_TOOLS));
     }
 
     @Override
