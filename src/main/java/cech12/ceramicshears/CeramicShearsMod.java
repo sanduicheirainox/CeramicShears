@@ -6,12 +6,12 @@ import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLConfig;
 import net.minecraftforge.fml.loading.FMLPaths;
@@ -22,7 +22,7 @@ import net.minecraftforge.registries.RegistryObject;
 import static cech12.ceramicshears.CeramicShearsMod.MOD_ID;
 
 @Mod(MOD_ID)
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CeramicShearsMod {
 
     public static final String MOD_ID = "ceramicshears";
@@ -42,7 +42,7 @@ public class CeramicShearsMod {
     }
 
     @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
+    public static void registerDispenseBehavior(FMLCommonSetupEvent event) {
         DispenserBlock.registerBehavior(CERAMIC_SHEARS.get(), new ShearsDispenseItemBehavior());
     }
 
