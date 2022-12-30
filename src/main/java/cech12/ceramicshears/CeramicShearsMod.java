@@ -3,9 +3,10 @@ package cech12.ceramicshears;
 import cech12.ceramicshears.config.ServerConfig;
 import cech12.ceramicshears.item.CeramicShearsItem;
 import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -29,8 +30,8 @@ public class CeramicShearsMod {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
-    public static final RegistryObject<Item> CLAY_SHEARS_PART = ITEMS.register("clay_shears_part", () -> new Item((new Item.Properties()).tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<Item> CERAMIC_SHEARS_PART = ITEMS.register("ceramic_shears_part", () -> new Item((new Item.Properties()).tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> CLAY_SHEARS_PART = ITEMS.register("clay_shears_part", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CERAMIC_SHEARS_PART = ITEMS.register("ceramic_shears_part", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CERAMIC_SHEARS = ITEMS.register("ceramic_shears", CeramicShearsItem::new);
 
     public CeramicShearsMod() {
@@ -44,6 +45,17 @@ public class CeramicShearsMod {
     @SubscribeEvent
     public static void registerDispenseBehavior(FMLCommonSetupEvent event) {
         DispenserBlock.registerBehavior(CERAMIC_SHEARS.get(), new ShearsDispenseItemBehavior());
+    }
+
+    @SubscribeEvent
+    public static void addItemsToTabs(CreativeModeTabEvent.BuildContents event) {
+        if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(CLAY_SHEARS_PART);
+            event.accept(CERAMIC_SHEARS_PART);
+        }
+        if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(CERAMIC_SHEARS);
+        }
     }
 
 }
